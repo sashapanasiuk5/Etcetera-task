@@ -1,0 +1,161 @@
+@import "theme/child_theme_variables";                   // <------- Add your variables into this file. Also add variables to overwrite Bootstrap variables here
+@import "assets/bootstrap5/bootstrap";                             // <------- Loads Bootstrap5
+@import "assets/understrap/theme/understrap";  // <------- Loads the Understrap defaults. Just a few classes to incorporate BS in WP
+@import "assets/understrap/theme/woocommerce"; // <------- Loads WooCommerce style fixes. Comment out if you aren't using WooCommerce
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import "assets/fontawesome/font-awesome"; 
+ //Optional files - If you don´t use the corresponding scripts/fonts comment em out
+                          // <------- Font Awesome Icon font
+@import "assets/underscores";                            // <------- Underscores media styles
+
+// Any additional imported files //
+@import "theme/child_theme";                             // <------- Add your styles into this file
+@import "assets/understrap/theme/colors";           // <-------- This creates the necessary bootstrap color classes.
+@import "assets/understrap/theme/blocks";           // <-------- This adds Bootstrap styles to blocks.
+@import "assets/understrap/theme/contact-form7"; 
+//;
+
+@keyframes show-card-info{
+    from{
+        bottom: -90px;
+    }
+    to{
+        bottom:0px;
+    }
+}
+
+
+.navbar-dark .navbar-brand a{
+color: #e0539b;
+    text-decoration: none;
+}
+.bg-primary{
+	background-color: #2B2B2D!important;
+}
+
+.image-container{
+	height: 420px;
+    overflow: hidden;
+    position: relative;
+}
+.image-container img{
+	position: absolute;
+    top: -140px;
+}
+
+.main-title, .building-title{
+	font-size: 28px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.entry-title{
+    text-align: center;
+}
+.building-post .title{
+	font-size: 18px;
+	padding-top: 15px;
+}
+
+.building-post-container{
+	padding: 25px;
+    -webkit-box-shadow: 2px 2px 19px 0px rgb(0 0 0 / 20%);
+    .title a{
+        text-decoration: none;
+    color: #2b2b2d;
+    }
+    img{
+    	border-radius: 10px;
+        object-fit: cover;
+    height: 250px;
+    }
+}
+
+.homepage-posts-container{
+    padding-top: 40px;
+    article{
+        padding: 25px;
+    -webkit-box-shadow: 2px 2px 19px 0px rgb(0 0 0 / 20%);
+        .entry-title a{
+            text-decoration: none;
+            color: #2b2b2d;
+        }
+    }
+}
+
+.building-page img{
+	object-fit: cover;
+    width: 100%;
+    height: 400px;
+}
+
+.building-info{
+	background-color: #2b2746;
+    color: #fff;
+    padding: 30px;
+    height: 100%;
+    font-family: "Montserrat";
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 200px;
+    position: relative;
+    &:after{
+    	content: "";
+	    width: 60px;
+	    height: 60px;
+	    position: absolute;
+	    right: -32px;
+	    transform: rotate(45deg);
+	    top: -32px;
+	    background: #fff;
+    }
+}
+
+.room-card{
+    position: relative;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    &:hover .room-card_info{
+        animation: show-card-info ease 0.7s forwards;
+
+    }
+}
+.room-card_info{
+    position: absolute;
+    bottom: -90px;
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    justify-content: space-between;
+    width: 100%;
+    background: #fff;
+    /*animation: show-card-info ease-in-out 0.7s;*/
+}
+
+.post-filter{
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    select, input{
+        margin-right: 15px;
+        margin-left:15px;
+        padding: 5px;
+    }
+    button{
+        border:none;
+        outline: none;
+        padding-right: 20px;
+        padding-left: 20px;
+        background-color: #e0539b;
+        color: #fff;
+        &:hover{
+            border:none;
+        outline: none;
+        }
+    }
+
+}
