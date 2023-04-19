@@ -13,7 +13,7 @@ class FilterWidget extends WP_Widget {
 		echo "<div class=\"post-filter\">
 				<div class=\"fields\">
 					<select name=\"region\">
-						<option value=\"0\">Будь-який</option>";
+						<option value=\"\">Будь-який</option>";
 		foreach($regions as $region){
 			$slug = $region->slug;
 			$name = $region->name;
@@ -25,7 +25,7 @@ class FilterWidget extends WP_Widget {
 
 					<input type=\"text\" placeholder=\"Кількість приміщень\" name=\"number_of_floors\">
 					<select name=\"type\">
-						<option value=\"0\">Будь-який</option>
+						<option value=\"\">Будь-який</option>
 						<option value=\"panel\">Панель</option>
 						<option value=\"brick\">Цегла</option>
 						<option value=\"foam-block\">Піноблок</option>

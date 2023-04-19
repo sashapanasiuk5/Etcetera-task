@@ -95,18 +95,17 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
 
 
 function filter_buildings(){
-	$filter = $_REQUEST["filter"];
+	$filter = $_REQUEST['filter'];
 	$validated_filter = array();
 	foreach ($filter as $key => $property) {
-		if( ($property != 0) && ($property != "") ) {
+
+		if(strlen($property) != 0 ) {
 			$validated_filter[$key] = $property;
 		}
 	}
-
 	$query = array();
 	$query['relation'] = 'AND';
 	$tax_query = array();
-
 	foreach ($validated_filter as $key => $property) {
 
 		switch ($key) {
@@ -141,7 +140,6 @@ function filter_buildings(){
 				break;
 		}
 	}
-
 	$buildings = get_posts(array(
 		"posts_per_page" => 5,
 		"post_type" => "building",
